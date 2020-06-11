@@ -1,0 +1,19 @@
+$ git status
+
+command-line
+$ git add --all .
+
+command-line
+$ git status
+
+command-line
+$ git commit -m "Changed the HTML for the site."
+
+command-line
+$ git push
+
+
+PythonAnywhere command-line
+$ cd ~/<your-pythonanywhere-domain>.pythonanywhere.com
+$ git pull
+[...]

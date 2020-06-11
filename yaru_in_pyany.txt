@@ -1,0 +1,2 @@
+cd ~/noknowledgegg.pythonanywhere.com
+git pull
