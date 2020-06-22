@@ -1,22 +1,41 @@
+{% load static %}
 <html>
   <head>
     <title>現在工事中</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif+JP&subset=japanese" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
   </head>
   <body>
-    <div>
-      <h1><a href = "/">現在工事中です</a></h1>
+    <div class = "page-header">
+      <h1><a href = "/">工事中</a></h1>
+    </div>
+    <!-- <div class="content container">
+      <div class="row">
+        <div class="col-md-8">
+          {% for post in posts %}
+            <div class="post">
+              <div class="date">
+                <p>published: {{post.published_date}}</p>
+              </div>
+              <h2><a href="">{{post.title}}</a></h2>
+              <p>{{post.text|linebreaksbr}}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div> -->
+    <div class = "page">
       <!-- shinobi ct2 -->
       <script type="text/javascript" src="//ct2.shinobi.jp/sc/1715174"></script>
       <noscript><a href="//ct2.shinobi.jp/gg/1715174"><img src="//ct2.shinobi.jp/ll/1715174" border="0" alt="カウンター" /></a></noscript>
       <!-- /shinobi ct2 -->
-    </div>
-    <div>
+    <br>
       Progress:<progress id="prog" max="100" value="3"> 3% </progress>
-    </div>
-    <div>
+    <br>
       <p>まだ何もありません...</p>
-    </div>
-    <div>
+    <br>
       <p>
       <ul>
         <li>AtCoder : <Font color = 'brown'>茶色</Font></li>
@@ -24,8 +43,7 @@
         <li><a href="https://atcoder.jp/users/NoKnowledgeGG" target="_blank" title="NoKnowledgeGG"><img src="https://atcoder-badges.now.sh/api/atcoder/NoKnowledgeGG" /></a></li>
       </ul>
       </p>
-    </div>
-    <div>
+    <br>
       <a class="twitter-timeline" data-width="220" data-height="500" data-theme="dark" href="https://twitter.com/YlePhan?ref_src=twsrc%5Etfw">Tweets by YlePhan</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
   </body>
