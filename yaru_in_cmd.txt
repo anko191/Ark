@@ -1,5 +1,8 @@
 cd C:\Users\ばやし\Documents\MEGAsync\Django
 
+
+
+
 mkdir djangogirls
 cd djangogirls
 
