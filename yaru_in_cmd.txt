@@ -1,6 +1,6 @@
 cd C:\Users\ばやし\Documents\MEGAsync\Django
-
-
+myvenv\Scripts\activate
+python manage.py runserver
 
 
 mkdir djangogirls
