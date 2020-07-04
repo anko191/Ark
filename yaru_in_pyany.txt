@@ -1,2 +1,5 @@
 cd ~/noknowledgegg.pythonanywhere.com
 git pull
+
+git clean -d -f
+git pull origin master
