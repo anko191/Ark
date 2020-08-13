@@ -5,7 +5,7 @@ python manage.py runserver
 これ大事！！！----------
 run
 
-manage.py collectstatic
+python manage.py collectstatic
 
 
 - which will collect static files from your app folders and put them in there
