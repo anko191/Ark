@@ -5,14 +5,9 @@
 /* body {
   padding-left: 30px;
 } */
-/* body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  background: #efefef;
-} */
+body {
+  background: #B991B3;
+}
 button {
   padding: 1.5em 5em;
   background: #efefef;
@@ -49,10 +44,19 @@ button:active {
               inset 2px 2px 2px rgba(255, 255, 255, .075),
               inset 2px 2px 4px rgba(0, 0, 0, .15);
 }
+.shadowbox{
+  float:left;
+  padding:5px 50px 50px 5px;
+}
+.shadowbox {
+  width: 20em;
+}
 
 
-
-
+.boxdashed {
+    background: #f0f7ff;
+    border: dashed 2px #5b8bd0;/*点線*/
+}
 .page-header {
     #background-color: #C25100;
     margin-top: 0;
@@ -87,9 +91,9 @@ button:active {
   background: #EFEEEE;
   border-radius: 12px;
   /* padding: 20px 20px 20px 40px; */
-  margin-left: 50px;
+  #margin-left: 50px;
   text-align: center;
-  margin-right: 50px;
+  #margin-right: 50px;
   transition: .2s ease-in-out;
   background: linear-gradient(30deg, #ffffff, #ffffff);
   box-shadow:  0px 0px 24px #a6a6a6,
@@ -123,6 +127,7 @@ h1, h2, h3, h4 {
 .date {
     color: #828282;
 }
+
 .inline_block{
   display:inline-block;
 }
