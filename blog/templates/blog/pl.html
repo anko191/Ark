@@ -1,0 +1,106 @@
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython.min.js">
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython_stdlib.js">
+    </script>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+  </head>
+  <div class = "page2">
+  <body onload="brython(1)">
+    <!-- <button id="button_alert">display an alert box</button>
+
+    <script type="text/python" id="script0">
+    from browser import document, alert
+
+    def hello(ev):
+        alert("Hello !")
+
+    document["button_alert"].bind("click", hello)
+    </script> -->
+    <br><br><br><br><br><br>
+    <button2 id="button_dialog">自分の名前を呼んでくれるボタン</button2>
+
+    <script type="text/python" id="script_dailog">
+    from browser import document, bind, html
+    from browser.widgets.dialog import InfoDialog, Dialog, EntryDialog
+
+    def hello(ev):
+      translations = {'日本':'こんにちは', 'English':'Hello', '中国':'你好'}
+      d = Dialog("Select your Greet !", ok_cancel=True)
+
+      style = dict(textAlign="center", paddingBottom="1em")
+
+      d.panel <= html.DIV("YourName "+ html.INPUT(), style = style)
+      d.panel <= html.DIV("Language "+ html.SELECT(html.OPTION(k) for k in translations),style=style)
+
+      @bind(d.ok_button,"click")
+      def ok(ev):
+        lan = d.select_one("SELECT").value
+        pro = translations[lan]
+        name = d.select_one("INPUT").value
+        left, top = d.scrolled_left, d.scrolled_top
+        d.close()
+        InfoDialog("Result", f"{pro}, {name} !",left = left, top = top)
+
+    document["button_dialog"].bind("click", hello)
+    </script>
+    <br><br><br><br><br><br>
+    <button2 id="button50">自分の画像を1つ選んで下さい</button2>
+    <br>
+    <script type="text/python" id="script50">
+    from browser import bind, window, document, alert
+
+    load_btn = document["rtfile1"]
+    # save_btn = document["save_file"]
+    ex_btn = document["ex"]
+    @bind(load_btn, "input")
+    def file_read(ev):
+        def onload(event):
+            """Triggered when file is read. The FileReader instance is
+            event.target.
+            The file content, as text, is the FileReader instance's "result"
+            attribute."""
+            document['rt1'].value = event.target.result
+            # display "save" button
+            save_btn.style.display = "inline"
+            # set attribute "download" to file name
+            save_btn.attrs["download"] = file.name
+
+        # Get the selected file as a DOM File object
+        file = load_btn.files[0]
+        # Create a new DOM FileReader instance
+        reader = window.FileReader.new()
+        # Read the file content as text
+        reader.readAsDataURL(file)
+        reader.bind("load", onload)
+  </script>
+
+  <script type="text/javascript">
+  function previewFile() {
+    const preview = document.querySelector('img');
+    const file = document.querySelector('input[type=file]').files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener("load", function () {
+      // 画像ファイルを base64 文字列に変換します
+      preview.src = reader.result;
+    }, false);
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  }
+  </script>
+  <br><input type="file" id="rtfile1" onchange="previewFile()" autocomplete="off"><br>
+  <img src="" height="150" alt="Preview">
+  <p>
+  <pre class="python"></pre>
+  <br>
+    <br><br><br><br><br><br>    <br><br><br><br><br><br>Made by Phanyle
+  </div>
+  </body>
+
+</html>

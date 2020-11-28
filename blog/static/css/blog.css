@@ -5,6 +5,7 @@
 /* body {
   padding-left: 30px;
 } */
+
 body {
   background: #B991B3;
 }
@@ -39,6 +40,43 @@ button:hover {
               2px 2px 4px rgba(0, 0, 0, .1);
 }
 button:active {
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, .7),
+              inset -2px -2px 4px rgba(255, 255, 255, .5),
+              inset 2px 2px 2px rgba(255, 255, 255, .075),
+              inset 2px 2px 4px rgba(0, 0, 0, .15);
+}
+
+button2 {
+  padding: 1.2em 1em;
+  background: #efefef;
+  border: none;
+  border-radius: .5rem;
+  color: #444;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .2rem;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+  box-shadow: -3px -3px 3px rgba(255, 255, 255, .3),
+              -3px -3px 3px rgba(255, 255, 255, .2),
+              3px 3px 3px rgba(255, 255, 255, .03),
+              3px 3px 3px rgba(0, 0, 0, .5);
+}
+button2:hover {
+  padding: auto auto;
+  /* background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, rgb(49, 170, 226, 100) 30%); */
+  background-position: -100% 0;
+  /* color: #fff; */
+  background-size: 200% auto;
+  transition: .3s;
+  box-shadow: -2px -2px 6px rgba(255, 255, 255, .6),
+              -2px -2px 4px rgba(255, 255, 255, .4),
+              2px 2px 2px rgba(255, 255, 255, .05),
+              2px 2px 4px rgba(0, 0, 0, .1);
+}
+button2:active {
   box-shadow: inset -2px -2px 6px rgba(255, 255, 255, .7),
               inset -2px -2px 4px rgba(255, 255, 255, .5),
               inset 2px 2px 2px rgba(255, 255, 255, .075),
@@ -111,7 +149,11 @@ button:active {
               inset 2px 2px 2px rgba(255, 255, 255, .075),
               inset 2px 2px 4px rgba(0, 0, 0, .15);
 }
-
+.clear_text {
+	color: initial;
+	font-size: initial;
+	text-shadow: initial;
+}
 .content {
     margin-left: 40px;
 }
@@ -122,6 +164,16 @@ h1, h2, h3, h4 {
 .page {
   margin: auto auto;
   text-align: center;
+  /* padding-left: 30px; */
+}
+
+.page2 {
+  margin: auto auto;
+  text-align: center;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0) 20%, rgb(49, 170, 226, 20) 120%) fixed;
+  animation: gradationTest 5s infinite;
+  background-position: 100% 150;
+  transition: .5s;
   /* padding-left: 30px; */
 }
 .date {
