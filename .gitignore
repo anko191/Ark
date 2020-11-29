@@ -1,8 +1,8 @@
 *.pyc
 *~
 /.vscode
-__pycache__
-myvenv
+/__pycache__
+/myvenv
 db.sqlite3
 static
 .DS_Store
@@ -11,3 +11,5 @@ yaru_in_git.txt
 yaru_in_pyany.txt
 demo.html
 index.html
+local_settings.py
+get_random_secret_key.py
