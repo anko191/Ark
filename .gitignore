@@ -4,5 +4,10 @@
 __pycache__
 myvenv
 db.sqlite3
-/static
+static
 .DS_Store
+yaru_in_cmd.txt
+yaru_in_git.txt
+yaru_in_pyany.txt
+demo.html
+index.html
