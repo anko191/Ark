@@ -2,6 +2,7 @@ cd C:\Users\ばやし\Documents\MEGAsync\Django
 
 
 cd C:\Users\ばやし\Documents\MEGAsync\Github\Ark
+doskey gapall=git add --all . $t git commit -m "--updated" $t git push
 
 myvenv\Scripts\activate
 python manage.py runserver
@@ -17,7 +18,7 @@ doskey gapall=git add --all . $t git commit -m "--updated" $t git push
 
 これ大事！！！----------
 run
-
+g
 python manage.py collectstatic
 
 
