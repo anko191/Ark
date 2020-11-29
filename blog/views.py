@@ -10,6 +10,3 @@ def pl(request):
 def tx(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/tx.html',{'posts':posts})
-def sw(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'blog/sw.png,{'posts':posts})
