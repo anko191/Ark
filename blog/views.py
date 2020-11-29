@@ -7,3 +7,6 @@ def post_list(request):
 def pl(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/pl.html',{'posts':posts})
+def tx(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    return render(request, 'blog/tx.html',{'posts':posts})

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+<meta charset="utf-8">
+<link href="//fonts.googleapis.com/css?family=Noto+Serif+JP&subset=japanese" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython.min.js">
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython_stdlib.js">
+</script>
+<title>_____</title>
+<style>
+.tab-wrap {
+	background: White;
+	box-shadow: 0 0 5px rgba(0,0,0,.1);
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+	padding: 0 0 20px;
+}
+
+.tab-label {
+	color: Gray;
+	cursor: pointer;
+	flex: 1;
+	font-weight: bold;
+	order: -1;
+	padding: 12px 24px;
+	position: relative;
+	text-align: center;
+	transition: cubic-bezier(0.4, 0, 0.2, 1) .2s;
+	user-select: none;
+	white-space: nowrap;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.tab-label:hover {
+	background: rgba(0, 191, 255,.1);
+}
+
+.tab-switch:checked + .tab-label {
+	color: DeepSkyBlue;
+}
+
+.tab-label::after {
+	background: DeepSkyBlue;
+	bottom: 0;
+	content: '';
+	display: block;
+	height: 3px;
+	left: 0;
+	opacity: 0;
+	pointer-events: none;
+	position: absolute;
+	transform: translateX(100%);
+	transition: cubic-bezier(0.4, 0, 0.2, 1) .2s 80ms;
+	width: 100%;
+	z-index: 1;
+}
+
+.tab-switch:checked ~ .tab-label::after {
+	transform: translateX(-100%);
+}
+
+.tab-switch:checked + .tab-label::after {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.tab-content {
+	height:0;
+	opacity:0;
+	padding: 0 20px;
+	pointer-events:none;
+	transform: translateX(-30%);
+	transition: transform .3s 80ms, opacity .3s 80ms;
+	width: 100%;
+}
+
+.tab-switch:checked ~ .tab-content {
+	transform: translateX(30%);
+}
+
+.tab-switch:checked + .tab-label + .tab-content {
+	height: auto;
+	opacity: 1;
+	order: 1;
+	pointer-events:auto;
+	transform: translateX(0);
+}
+
+.tab-wrap::after {
+	content: '';
+	height: 20px;
+	order: -1;
+	width: 100%;
+}
+
+.tab-switch {
+	display: none;
+}
+
+/* ============================== */
+
+body {
+  margin: 10px;
+  text-align: center;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0) 20%, rgb(49, 170, 226, 20) 120%) fixed;
+  animation: gradationTest 5s infinite;
+  background-position: 100% 150;
+  transition: .5s;
+  /* padding-left: 30px; */
+}
+button2 {
+  padding: 1.2em 3em;
+  background: #efefef;
+  border: none;
+  border-radius: .5rem;
+  color: #444;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .2rem;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+  box-shadow: -3px -3px 3px rgba(255, 255, 255, .3),
+              -3px -3px 3px rgba(255, 255, 255, .2),
+              3px 3px 3px rgba(255, 255, 255, .03),
+              3px 3px 3px rgba(0, 0, 0, .5);
+}
+button2:hover {
+  padding: auto auto;
+  /* background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, rgb(49, 170, 226, 100) 30%); */
+  background-position: -100% 0;
+  /* color: #fff; */
+  background-size: 200% auto;
+  transition: .3s;
+  box-shadow: -2px -2px 6px rgba(255, 255, 255, .6),
+              -2px -2px 4px rgba(255, 255, 255, .4),
+              2px 2px 2px rgba(255, 255, 255, .05),
+              2px 2px 4px rgba(0, 0, 0, .1);
+}
+button2:active {
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, .7),
+              inset -2px -2px 4px rgba(255, 255, 255, .5),
+              inset 2px 2px 2px rgba(255, 255, 255, .075),
+              inset 2px 2px 4px rgba(0, 0, 0, .15);
+}
+</style>
+</head>
+<body>
+  <div class="tab-wrap">
+      <input id="TAB-01" type="radio" name="TAB" class="tab-switch" checked="checked" /><label class="tab-label" for="TAB-01">StopWatch</label>
+      <div class="tab-content">
+				<body onload="brython(1)">
+			    <script type="text/python" id="script0">
+					import time
+					from browser import document as doc
+					from browser import html
+					from browser import timer
+
+					_timer = None
+					counter = 0
+					now = 0
+					prv = ""
+					def back(ev):
+							global now
+							global prv
+							now = max(0, now-1)
+							prv = doc['txt'].text[-9:]
+							doc['txt'].text = str(doc['txt'].text)[:-9]
+					def undo(ev):
+							global now
+							global prv
+							#doc['txt'].text = prv
+							if prv != "":
+									now += 1
+									doc['txt'].text = str(doc['txt'].text)+" "+prv
+							prv = ""
+
+					def ec(ev):
+							global now
+							now += 1
+							global prv
+							prv = ""
+							st = str(doc['_timer'].text)
+							sec, mi = map(int,st.split('.'))
+							MIN = sec//60
+							SEC = sec%60
+							doc['txt'] <= '%02d‣%02d:%02d, '%(now,MIN,SEC)
+
+					def show():
+					    doc['_timer'].text = '%.2f' %(time.time()-counter)
+
+					def start_timer(ev):
+					    global _timer,counter
+					    if _timer is None:
+					        counter = time.time()
+					        _timer = timer.set_interval(show,10)
+					        doc['start'].text = 'Hold'
+					    elif _timer == 'hold': # restart
+					        # restart timer
+					        counter = time.time()-float(doc['_timer'].text)
+					        _timer = timer.set_interval(show,10)
+					        doc['start'].text = 'Hold'
+					    else: # hold
+					        timer.clear_interval(_timer)
+					        _timer = 'hold'
+					        doc['start'].text = 'Restart'
+
+					def stop_timer(ev):
+					    global _timer
+					    timer.clear_interval(_timer)
+					    _timer = None
+					    t = 0
+					    doc['_timer'].text = '%.2f' %0
+					    doc['start'].text = 'Start'
+					doc['start'].bind('click', start_timer)
+					doc['stop'].bind('click', stop_timer)
+					doc['lap'].bind('click', ec)
+					doc['clear'].bind('click', back)
+					doc['undo'].bind('click', undo)
+			    </script>
+
+					<tr>
+					<td>
+					<div id="_timer" style="
+					color:#444;
+					padding:200px;
+					font-size:50px;
+					background: linear-gradient(45deg, rgba(0, 0, 0, 0) 20%, rgb(49, 170, 226, 20) 240%) fixed;
+				  animation: gradationTest 5s infinite;
+				  transition: .5s;
+					">0.00</div>
+					<div id="txt" style="
+					color:#444;
+					padding:20px;
+					font-size:20px;
+					background: linear-gradient(45deg, rgba(0, 0, 0, 0) 20%, rgb(49, 170, 226, 20) 240%) fixed;
+					animation: gradationTest 5s infinite;
+					transition: .5s;
+					"></div>
+				</td><br>
+					<td style="width:80px;">
+					<div style = "line-height:4em";onmousedown='return false;' onselectstart='return false;'>
+					<button2 id="start">Start</button2>
+					<button2 id="lap">Flag</button2>
+					<button2 id="stop">Stop</button2>
+					<button2 id="clear">Clear</button2>
+					<button2 id="undo">ミスって消した</button2>
+				  </div>
+					</td>
+					</tr>
+      </div>
+      <input id="TAB-02" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-02">工事中</label>
+      <div class="tab-content">
+				<tr>
+				<td>
+				<div id="None" style="
+				color:#444;
+				padding:200px;
+				font-family:courier;
+				font-weight:bold;
+				font-size:50px;
+				background: linear-gradient(45deg, rgba(0, 0, 0, 0) 20%, rgb(49, 170, 226, 20) 240%) fixed;
+				animation: gradationTest 5s infinite;
+				transition: .5s;
+				">なにもないよ</div>
+				</td>
+				</tr>
+      </div>
+      <input id="TAB-03" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-03">工事中</label>
+      <div class="tab-content">
+				<tr>
+				<td>
+				<div id="None" style="
+				color:#444;
+				padding:200px;
+				font-family:courier;
+				font-weight:bold;
+				font-size:50px;
+				background: linear-gradient(45deg, rgba(0, 0, 0, 0) 20%, rgb(49, 170, 226, 20) 240%) fixed;
+				animation: gradationTest 5s infinite;
+				transition: .5s;
+				">なにもないよ</div>
+				</td>
+				</tr>
+      </div>
+  </div>
+made by phanyle
+</body>
+</html>

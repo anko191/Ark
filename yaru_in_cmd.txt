@@ -1,4 +1,8 @@
 cd C:\Users\ばやし\Documents\MEGAsync\Django
+
+
+cd C:\Users\ばやし\Documents\MEGAsync\Github\Ark
+
 myvenv\Scripts\activate
 python manage.py runserver
 
