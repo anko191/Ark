@@ -6,6 +6,15 @@ cd C:\Users\ばやし\Documents\MEGAsync\Github\Ark
 myvenv\Scripts\activate
 python manage.py runserver
 
+抜けるとき
+myvenv\Scripts\deactivate.bat
+
+cd C:\Users\ばやし\Documents\MEGAsync\Github\Ark
+doskey gapall=git add --all . $t git commit -m "--updated" $t git push
+
+
+
+
 これ大事！！！----------
 run
 
