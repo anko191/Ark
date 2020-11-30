@@ -1,0 +1,208 @@
+/* h1 a, h2 a{
+  color: #C25100;
+  font-family: 'Noto Serif JP';
+} */
+/* body {
+  padding-left: 30px;
+} */
+
+
+body {
+  background: #B991B3;
+}
+button {
+  padding: 1.5em 5em;
+  background: #efefef;
+  border: none;
+  border-radius: .5rem;
+  color: #444;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .2rem;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+  box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
+              -6px -6px 10px rgba(255, 255, 255, .5),
+              6px 6px 8px rgba(255, 255, 255, .075),
+              6px 6px 10px rgba(0, 0, 0, .15);
+}
+button:hover {
+  padding: auto auto;
+  /* background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, rgb(49, 170, 226, 100) 30%); */
+  background-position: -100% 0;
+  /* color: #fff; */
+  background-size: 200% auto;
+  transition: .3s;
+  box-shadow: -2px -2px 6px rgba(255, 255, 255, .6),
+              -2px -2px 4px rgba(255, 255, 255, .4),
+              2px 2px 2px rgba(255, 255, 255, .05),
+              2px 2px 4px rgba(0, 0, 0, .1);
+}
+button:active {
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, .7),
+              inset -2px -2px 4px rgba(255, 255, 255, .5),
+              inset 2px 2px 2px rgba(255, 255, 255, .075),
+              inset 2px 2px 4px rgba(0, 0, 0, .15);
+}
+
+button2 {
+  padding: 1.2em 1em;
+  background: #efefef;
+  border: none;
+  border-radius: .5rem;
+  color: #444;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .2rem;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+  box-shadow: -3px -3px 3px rgba(255, 255, 255, .3),
+              -3px -3px 3px rgba(255, 255, 255, .2),
+              3px 3px 3px rgba(255, 255, 255, .03),
+              3px 3px 3px rgba(0, 0, 0, .5);
+}
+button2:hover {
+  padding: auto auto;
+  /* background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, rgb(49, 170, 226, 100) 30%); */
+  background-position: -100% 0;
+  /* color: #fff; */
+  background-size: 200% auto;
+  transition: .3s;
+  box-shadow: -2px -2px 6px rgba(255, 255, 255, .6),
+              -2px -2px 4px rgba(255, 255, 255, .4),
+              2px 2px 2px rgba(255, 255, 255, .05),
+              2px 2px 4px rgba(0, 0, 0, .1);
+}
+button2:active {
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, .7),
+              inset -2px -2px 4px rgba(255, 255, 255, .5),
+              inset 2px 2px 2px rgba(255, 255, 255, .075),
+              inset 2px 2px 4px rgba(0, 0, 0, .15);
+}
+.shadowbox{
+  float:left;
+  padding:5px 50px 50px 5px;
+}
+.shadowbox {
+  width: 20em;
+}
+
+
+.boxdashed {
+    background: #f0f7ff;
+    border: dashed 2px #5b8bd0;/*点線*/
+}
+.page-header {
+    #background-color: #C25100;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    #color: #ffffff;
+    font-size: 36pt;
+    font-family: 'Noto Serif JP', cursive;
+    text-decoration: none;
+}
+.page-header{
+  padding: auto auto;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0) 20%, rgb(49, 170, 226, 20) 90%) fixed;
+  animation: gradationTest 5s infinite;
+  background-position: 0% 150;
+  color: #fff;
+  background-size: 200% auto;
+  transition: .3s;
+  box-shadow: -2px -2px 6px rgba(255, 255, 255, .6),
+              -2px -2px 4px rgba(255, 255, 255, .4),
+              2px 2px 2px rgba(255, 255, 255, .05),
+              2px 2px 4px rgba(0, 0, 0, .1);
+}
+@keyframes gradationTest {
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+.neumorphism1 {
+  background: #EFEEEE;
+  border-radius: 12px;
+  /* padding: 20px 20px 20px 40px; */
+  #margin-left: 50px;
+  text-align: center;
+  #margin-right: 50px;
+  transition: .2s ease-in-out;
+  background: linear-gradient(30deg, #ffffff, #ffffff);
+  box-shadow:  0px 0px 24px #a6a6a6,
+               6px 6px 24px #ffffff;
+}
+.neumorphism1:hover {
+  box-shadow: -2px -2px 6px rgba(255, 255, 255, .6),
+              -2px -2px 4px rgba(255, 255, 255, .4),
+              2px 2px 2px rgba(255, 255, 255, .05),
+              2px 2px 4px rgba(0, 0, 0, .1);
+}
+.neumorphism1:active {
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, .7),
+              inset -2px -2px 4px rgba(255, 255, 255, .5),
+              inset 2px 2px 2px rgba(255, 255, 255, .075),
+              inset 2px 2px 4px rgba(0, 0, 0, .15);
+}
+.clear_text {
+	color: initial;
+	font-size: initial;
+	text-shadow: initial;
+}
+.content {
+    margin-left: 40px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Lobster', cursive;
+}
+.page {
+  margin: auto auto;
+  text-align: center;
+  /* padding-left: 30px; */
+}
+
+.page2 {
+  margin: auto auto;
+  text-align: center;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0) 20%, rgb(49, 170, 226, 20) 120%) fixed;
+  animation: gradationTest 5s infinite;
+  background-position: 100% 150;
+  transition: .5s;
+  /* padding-left: 30px; */
+}
+.date {
+    color: #828282;
+}
+
+.inline_block{
+  display:inline-block;
+}
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+.post {
+    margin-bottom: 70px;
+}
+
+.post h2 a, .post h2 a:visited {
+    color: #000000;
+}
