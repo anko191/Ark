@@ -8,7 +8,10 @@
 
 
 body {
-  background: #B991B3;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0) 20%, rgb(49, 170, 226, 20) 120%) fixed;
+  animation: gradationTest 5s infinite;
+  background-position: 100% 150;
+  transition: .5s;
 }
 button {
   padding: 1.5em 5em;
