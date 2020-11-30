@@ -23,7 +23,7 @@ try:
     from .local_settings import *
 except ImportError:
     pass
-    
+
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = '1i85i6+-8-8wwi$f@9(_m7tc0s9d7)%$&3i3ou=ljlf9sv2bpz'
 
