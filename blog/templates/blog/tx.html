@@ -153,6 +153,7 @@ button2:active {
       <input id="TAB-01" type="radio" name="TAB" class="tab-switch" checked="checked" /><label class="tab-label" for="TAB-01">StopWatch</label>
       <div class="tab-content">
 				<body onload="brython(1)">
+					</script>
 			    <script type="text/python" id="script0">
 					import time
 					from browser import document as doc
@@ -160,6 +161,7 @@ button2:active {
 					from browser import timer
 
 					_timer = None
+
 					counter = 0
 					now = 0
 					prv = ""
@@ -187,10 +189,16 @@ button2:active {
 							sec, mi = map(int,st.split('.'))
 							MIN = sec//60
 							SEC = sec%60
-							doc['txt'] <= '%02d‣%02d:%02d, '%(now,MIN,SEC)
-
+							doc['txt'] <= '%02d‣%02d:%02d, \n'%(now,MIN,SEC)
+					def get_m_s(sec):
+							m,s = divmod(int(sec), 60)
+							h = int(sec)//3600
+							return (h, m, s)
 					def show():
-					    doc['_timer'].text = '%.2f' %(time.time()-counter)
+							global counter
+							T = get_m_s(time.time()-counter)
+							doc['_timer'].text = '%.2f' %(time.time()-counter)
+							doc['sht'].text = '%02d:%02d:%02d'%(T[0], T[1],T[2])
 
 					def start_timer(ev):
 					    global _timer,counter
@@ -214,7 +222,9 @@ button2:active {
 					    _timer = None
 					    t = 0
 					    doc['_timer'].text = '%.2f' %0
+							#doc['sht'].text = "00:00"
 					    doc['start'].text = 'Start'
+
 					doc['start'].bind('click', start_timer)
 					doc['stop'].bind('click', stop_timer)
 					doc['lap'].bind('click', ec)
@@ -224,7 +234,7 @@ button2:active {
 
 					<tr>
 					<td>
-					<div id="_timer" style="
+					<div id="_timer" style="font-size:5px;">0.00</div><div id="sht" style="
 					color:#444;
 					/* padding:10px; */
 					font-size:50px;
@@ -234,7 +244,7 @@ button2:active {
 					width: 100%;
 					line-height: 160%;
 					/* height: 100%; */
-					">0.00</div>
+					">00:00:00</div>
 					<div id="txt" style="
 					color:#444;
 					padding:20px;
@@ -254,7 +264,7 @@ button2:active {
 					<td style="width:80px;">
 					<div style = "line-height:4em";onmousedown='return false;' onselectstart='return false;'>
 					<button2 id="clear">Clear</button2>
-					<button2 id="undo">ミスって消した</button2>
+					<button2 id="undo">Undo</button2>
 				  </div>
 					</td>
 					</tr>
