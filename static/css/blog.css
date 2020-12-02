@@ -6,7 +6,7 @@
   padding-left: 30px;
 } */
 body {
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 20%, rgb(49, 170, 226, 20) 120%) fixed;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 20%, rgba(49, 170, 226, 20) 120%) fixed;
   animation: gradationTest 5s infinite;
   background-position: 100% 150;
   transition: .5s;
@@ -47,6 +47,106 @@ button:active {
               inset 2px 2px 2px rgba(255, 255, 255, .075),
               inset 2px 2px 4px rgba(0, 0, 0, .15);
 }
+a {
+  font-size:20px;
+  color: teal;
+  text-decoration: none;
+}
+.box {
+  width: 100%;
+  height: 150px;
+  border-radius: 5px;
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
+  background: #fbfcee;
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.wave {
+  opacity: .1;
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  background: #0af;
+  width: 500px;
+  height: 800px;
+  margin-left: -250px;
+  margin-top: -250px;
+  -webkit-transform-origin: 50% 48%;
+          transform-origin: 50% 48%;
+  border-radius: 43%;
+  -webkit-animation: drift 3000ms infinite linear;
+          animation: drift 3000ms infinite linear;
+
+}
+
+.wave.-three {
+  -webkit-animation: drift 5000ms infinite linear;
+          animation: drift 5000ms infinite linear;
+}
+
+.wave.-two {
+  -webkit-animation: drift 7000ms infinite linear;
+          animation: drift 7000ms infinite linear;
+  opacity: .1;
+  background: yellow;
+}
+
+.box:after {
+  content: '';
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(88, 6, 221,0.3)), color-stop(80%, rgba(221, 238, 255, 0)), to(rgba(255, 255, 255, 0.5)));
+  background: linear-gradient(to bottom, rgba(88, 6, 221,0.3), rgba(221, 238, 255, 0) 80%, rgba(255, 255, 255, 0.5));
+  z-index: 11;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  line-height: 160px;
+  text-align: center;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  color: white;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: .4em;
+  font-size: 24px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  text-indent: .3em;
+}
+
+@-webkit-keyframes drift {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  from {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes drift {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  from {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
 .shadowbox{
   float:left;
   padding:5px 50px 50px 5px;
@@ -61,11 +161,10 @@ button:active {
     border: dashed 2px #5b8bd0;/*点線*/
 }
 .page-header {
-    #background-color: #C25100;
+    /* background-color: #C25100; */
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
-
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     #color: #ffffff;
     font-size: 36pt;
@@ -74,7 +173,7 @@ button:active {
 }
 .page-header{
   padding: auto auto;
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0) 20%, rgb(49, 170, 226, 20) 90%) fixed;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0) 20%, rgba(49, 170, 226, 20) 90%) fixed;
   animation: gradationTest 5s infinite;
   background-position: 0% 150;
   color: #fff;
@@ -89,6 +188,15 @@ button:active {
 0%{background-position:0% 50%}
 50%{background-position:100% 50%}
 100%{background-position:0% 50%}
+}
+.make_line {
+    background-color: #C25100;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+    box-shadow: -2px -2px 6px rgba(255, 255, 255, .6),
+                -2px -2px 4px rgba(255, 255, 255, .4),
+                2px 2px 2px rgba(255, 255, 255, .05),
+                2px 2px 4px rgba(0, 0, 0, .1);
 }
 .neumorphism1 {
   background: #EFEEEE;
