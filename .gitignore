@@ -3,6 +3,7 @@
 /.vscode
 /__pycache__
 db.sqlite3
+/myvenv
 .DS_Store
 yaru_in_cmd.txt
 yaru_in_git.txt
