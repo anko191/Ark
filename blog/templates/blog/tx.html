@@ -111,22 +111,21 @@ body {
   /* padding-left: 30px; */
 }
 button2 {
-  padding: 1.2em 3em;
+  padding: 20px 100px;
   background: #efefef;
   border: none;
-  border-radius: .5rem;
+  border-radius: 0;
   color: #444;
   font-size: 1rem;
   font-weight: 700;
+	margin:10px;
   letter-spacing: .2rem;
   text-align: center;
-  outline: none;
+  outline: inherit;
   cursor: pointer;
   transition: .3s ease-in-out;
-  box-shadow: -3px -3px 3px rgba(255, 255, 255, .3),
-              -3px -3px 3px rgba(255, 255, 255, .2),
-              3px 3px 3px rgba(255, 255, 255, .03),
-              3px 3px 3px rgba(0, 0, 0, .5);
+	box-shadow:  4px -4px 0px #415866,
+	             -4px 4px 0px #7012fd;
 }
 button2:hover {
   padding: auto auto;
@@ -158,26 +157,29 @@ button2:active {
 					from browser import document as doc
 					from browser import html
 					from browser import timer
+					ul = doc["txt"].get(selector="ul")[0]
+					element = ul.get(selector="li")[0]
+					nb = 0
 
 					_timer = None
 
 					counter = 0
 					now = 0
 					prv = ""
-					def back(ev):
+					def clear(ev):
 							global now
 							global prv
 							now = max(0, now-1)
 							prv = doc['txt'].text[-9:]
-							doc['txt'].text = str(doc['txt'].text)[:-9]
-					def undo(ev):
-							global now
-							global prv
-							#doc['txt'].text = prv
-							if prv != "":
-									now += 1
-									doc['txt'].text = str(doc['txt'].text)+" "+prv
-							prv = ""
+							node = doc["txt"].get(selector="ul")[0].get(selector="li")[0]
+							if node.hasChildNodes():
+									no = doc["txt"].get(selector="ul")[0].get(selector="li")[-2]
+									no.remove()
+							else:
+									pass
+
+							#doc['txt'].text = str(doc['txt'].text)[:-9]
+
 
 					def ec(ev):
 							global now
@@ -188,7 +190,10 @@ button2:active {
 							sec, mi = map(int,st.split('.'))
 							MIN = sec//60
 							SEC = sec%60
+							global nb
+							nb += 1
 							doc['txt'] <= '%02d‣%02d:%02d, \n'%(now,MIN,SEC)
+							ul.insertBefore(html.LI(f"{doc['txt'].text[-9:]}"), element)
 					def get_m_s(sec):
 							m,s = divmod(int(sec), 60)
 							h = int(sec)//3600
@@ -197,6 +202,7 @@ button2:active {
 							global counter
 							T = get_m_s(time.time()-counter)
 							doc['_timer'].text = '%.2f' %(time.time()-counter)
+
 							doc['sht'].text = '%02d:%02d:%02d'%(T[0], T[1],T[2])
 
 					def start_timer(ev):
@@ -227,8 +233,7 @@ button2:active {
 					doc['start'].bind('click', start_timer)
 					doc['stop'].bind('click', stop_timer)
 					doc['lap'].bind('click', ec)
-					doc['clear'].bind('click', back)
-					doc['undo'].bind('click', undo)
+					doc['clear'].bind('click', clear)
 			    </script>
 
 					<tr>
@@ -247,23 +252,23 @@ button2:active {
 					<div id="txt" style="
 					color:#444;
 					padding:20px;
-					font-size:20px;
+					font-size:0px;
 					background: linear-gradient(45deg, rgba(0, 0, 0, 0) 20%, rgb(49, 170, 226, 20) 240%) fixed;
 					animation: gradationTest 5s infinite;
 					transition: .5s;
-					"></div>
-				</td><br>
-					<td style="width:80px;">
-					<div style = "line-height:4em";onmousedown='return false;' onselectstart='return false;'>
+					"><ul style="list-style:none; font-size:20px"><li></ul></div>
+				</td><br onmousedown='return false;' onselectstart='return false;'>
+					<td>
+					<div style = "line-height:4em;";onmousedown='return false;' onselectstart='return false;'>
 					<button2 id="start">Start</button2>
-					<button2 id="lap">Flag</button2>
-					<button2 id="stop">Stop</button2>
+					<button2 id="stop">Reset</button2>
 				  </div>
 					</td>
-					<td style="width:80px;">
+					<br>
+					<td>
 					<div style = "line-height:4em";onmousedown='return false;' onselectstart='return false;'>
-					<button2 id="clear">Clear</button2>
-					<button2 id="undo">Undo</button2>
+					<button2 id="lap">Flag</button2>
+					<button2 id="clear">Delete</button2>
 				  </div>
 					</td>
 					</tr>
