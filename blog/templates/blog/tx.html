@@ -162,7 +162,7 @@ button2:active {
 					nb = 0
 
 					_timer = None
-
+					doc['sht'] = None
 					counter = 0
 					now = 0
 					prv = ""
@@ -227,7 +227,6 @@ button2:active {
 					    _timer = None
 					    t = 0
 					    doc['_timer'].text = '%.2f' %0
-							doc['sht'].text = "00:00:00"
 					    doc['start'].text = 'Start'
 
 					doc['start'].bind('click', start_timer)
@@ -238,7 +237,8 @@ button2:active {
 
 					<tr>
 					<td>
-					<div id="_timer" style="font-size:5px;">0.00</div><div id="sht" style="
+					<div id="_timer" style="font-size:5px;">0.00</div>
+					<div id="sht" style="
 					color:#444;
 					/* padding:10px; */
 					font-size:50px;
