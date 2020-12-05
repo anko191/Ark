@@ -26,8 +26,9 @@
           <div style = "margin-left:20px"><br>
               <p>< 投稿日時： {{ post.published_date }} ></p>
               <h2 style="font-family: 'Noto Serif JP', cursive; font-weight:bold">{{ post.title }}</h2>
-              <p style = "margin-left:30px;font-size:21px;" >{{ post.text|linebreaksbr }}</p>
+              <div class = "boxdashed" style="border: dashed 2px #39a0db;margin-left:30px;margin-right:30px;"><p style = "margin-left:20px;font-size:21px;" >{{ post.text|linebreaksbr }}</p></div>
           </div>
+          <br>
           <div id = "line" style="
             background-color: #330066;
             margin-top: 0;
