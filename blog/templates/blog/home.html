@@ -28,31 +28,61 @@
     <br>
     <br>
       <p><font color = 'red'>New!</font><a href = '/phan' style="text-decoration: none;">日記をつくったよ</a></p>
+      <p>ボタンを押すと内容が出てくるよ</p>
     <br>
     <div class = "inline_block">
-      <div class="shadowbox">
-        <div class = "neumorphism1">
-        Profile
-        </div>
+      <div class="hidden_box" onmousedown='return false;' onselectstart='return false;'>
+      <input type="checkbox" id="label1" />
+      <!-- <div class="shadowbox"> -->
+        <label for="label1">
+        <!-- <div class = "neumorphism1"> -->
+        プロフィール
+        <!-- </div> -->
+      </label>
+        <div class="hidden_show">
         <p>
+        <div class = "lowboxdashed">
+        ID関係
+        </div>
+        <div class = "boxdashed">
         ID   : NoKnowledgeGG
           <br>AtCoder : <Font color = 'green'>緑色</Font><br><a href="https://atcoder.jp/users/NoKnowledgeGG" target="_blank" title="NoKnowledgeGG"><img src="https://atcoder-badges.now.sh/api/atcoder/NoKnowledgeGG" /></a>
           <br><a class="github-button" href="https://github.com/anko191" data-color-scheme="no-preference: dark; light: dark; dark: dark;" aria-label="Follow @anko191 on GitHub">Follow @anko191</a>
-        </p>
-      </div>
-      <div class="shadowbox">
-        <div class = "neumorphism1">
-        Hobbies and Favorite Things
+          <br>
         </div>
+        <div class = "lowboxdashed">
+        趣味
+        </div>
+        <div class = "boxdashed">
+          Kaggle
+                  <br>DeepLearning<br>AtCoder<br>smile<br>Pytorch<br>楽しいね<br>
+
+        </div>
+        </p>
+        </div>
+      <!-- </div> -->
+      </div>
+      <!-- <div class="hidden_box"  onmousedown='return false;' onselectstart='return false;'>
+
+      <input type="checkbox" id="label2" />
+      <label for="label2">
+        趣味とか好きなこと
+      </label>
+        <div class="hidden_show">
         <p>
+        <div class = "boxdashed">
         Kaggle
-        <br>DeepLearning<br>AtCoder<br>smile<br>ちょいPytorch<br>
+        <br>DeepLearning<br>AtCoder<br>smile<br>Pytorch<br>楽しいね<br>
         </p>
       </div>
-      <div class="shadowbox">
-        <div class = "neumorphism1">
-        Sites I developed
         </div>
+      </div> -->
+      <div class="hidden_box" onmousedown='return false;' onselectstart='return false;'>
+      <input type="checkbox" id="label3" />
+      <label for="label3">
+      作ったもの！<font color=red>update!12/05</font>
+      </label>
+        <div class="hidden_show">
         <p>
         <br><div class = "boxdashed"><Font color = 'green'>日記</Font><br><a href="https://noknowledgegg.pythonanywhere.com/phan" target="_blank" title="diary"><img src= "{% static "img/diary.png" %}" style="
           width: 200px;
@@ -70,13 +100,16 @@
         <br><div class = "boxdashed"><Font color = 'green'>箱庭諸島(停止)</Font><br>↓<br>→<a href="http://ankoku.rosx.net/hako/hako-main.cgi" target="_blank" title="hako"><img src="http://ankoku.rosx.net/hako/hakorenas/prize10.gif" /></a>←<br>↑</div>
         </p>
       </div>
-      <div class="shadowbox">
-        <div class = "neumorphism1">
-        Twitter
-        </div>
+    </div>
+    <div class="hidden_box" onmousedown='return false;' onselectstart='return false;'>
+    <input type="checkbox" id="label4" />
+    <label for="label4">
+        このサイトを作った人のTwitter
+    </label>
+      <div class="hidden_show">
         <div class = "page">
           <br>
-          <a class="twitter-timeline" data-width="220" data-height="500" data-theme="dark" href="https://twitter.com/YlePhan?ref_src=twsrc%5Etfw">Tweets by YlePhan</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <a class="twitter-timeline" data-width="420" data-height="500" data-theme="dark" href="https://twitter.com/YlePhan?ref_src=twsrc%5Etfw">Tweets by YlePhan</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
       </div>
     </div>
