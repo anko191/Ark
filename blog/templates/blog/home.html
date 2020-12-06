@@ -5,9 +5,13 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link href="//fonts.googleapis.com/css?family=Noto+Serif+JP&subset=japanese" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
   </head>
   <body>
+
     <div class = "page-header">
       <div class = "page">
         <div class = "inline_block">
@@ -116,5 +120,14 @@
   </div>
       <!-- Place this tag in your head or just before your close body tag. -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </div>
+    <div class="loader-wrapper">
+      <span class="loader"><p style="margin-top:-10%;margin-left:40%;maring-right:50%"><Font color="#fff">Loading...</font></p><span class="loader-inner"></span></span>
+    </div>
+    <script>
+        $(window).on("load",function(){
+          $(".loader-wrapper").delay(2500).fadeOut(1000);
+        });
+    </script>
   </body>
 </html>
