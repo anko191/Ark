@@ -5,61 +5,72 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link href="//fonts.googleapis.com/css?family=Noto+Serif+JP&subset=japanese" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
   </head>
   <body>
 
-    <div class = "page-header">
+    <div class = "page-header" onmousedown='return false;' onselectstart='return false;'>
       <div class = "page">
         <div class = "inline_block">
-      <h1>Phan_yLe's Ark</h1>
+      <h1>Phan_yLe's Ark <a href = "./phan"><i class="fa fa-book"></i></a></h1>
         </div>
       </div>
     </div>
-    <div class = "page">
-      　　　　　あなたは
+    <div class = "page" onmousedown='return false;' onselectstart='return false;'>
+      <font size = "5px" color = "#FEDFE1">
+      あなたは
       <!-- shinobi ct2 -->
       <script type="text/javascript" src="//ct2.shinobi.jp/sc/1715174"></script>
       <noscript><a href="//ct2.shinobi.jp/gg/1715174"><img src="//ct2.shinobi.jp/ll/1715174" border="0" alt="カウンター" /></a></noscript>
       <!-- /shinobi ct2 -->
-      番目の訪問者です！
+      番目の訪問者です！ ボタンを押すと内容が出てくるよ</font>
     <br>
+    <!-- <div class="progress">
+      <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+      aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style = "width:40%;">
+        40%
+      </div>
+    </div>
     <br>
       Progress: 9% <progress id="prog" max="100" value="9"> 9% </progress>
     <br>
     <br>
       <p><font color = 'red'>New!</font><a href = '/phan' style="text-decoration: none;">日記をつくったよ</a></p>
       <p>ボタンを押すと内容が出てくるよ</p>
-    <br>
+    <br> -->
     <div class = "inline_block">
       <div class="hidden_box" onmousedown='return false;' onselectstart='return false;'>
       <input type="checkbox" id="label1" />
       <!-- <div class="shadowbox"> -->
+
         <label for="label1">
         <!-- <div class = "neumorphism1"> -->
-        プロフィール
+        プロフィール <i class="fa fa-user"></i>
         <!-- </div> -->
-      </label>
+        </label>
         <div class="hidden_show">
         <p>
         <div class = "lowboxdashed">
         ID関係
         </div>
         <div class = "boxdashed">
-        ID   : NoKnowledgeGG
-          <br>AtCoder : <Font color = 'green'>緑色</Font><br><a href="https://atcoder.jp/users/NoKnowledgeGG" target="_blank" title="NoKnowledgeGG"><img src="https://atcoder-badges.now.sh/api/atcoder/NoKnowledgeGG" /></a>
-          <br><a class="github-button" href="https://github.com/anko191" data-color-scheme="no-preference: dark; light: dark; dark: dark;" aria-label="Follow @anko191 on GitHub">Follow @anko191</a>
+        NoKnowledgeGG
+          <br>Kaggle : <a href = "https://www.kaggle.com/anko191">プロフィール</a>
+          <br>AtCoder : <Font color = 'green'>緑色</Font>  <a href="https://atcoder.jp/users/NoKnowledgeGG" target="_blank" title="NoKnowledgeGG"><img src="https://atcoder-badges.now.sh/api/atcoder/NoKnowledgeGG" /></a>
+          <br>My Github : <a class="github-button" href="https://github.com/anko191" data-color-scheme="no-preference: dark; light: dark; dark: dark;" aria-label="Follow @anko191 on GitHub">Follow @anko191</a>
           <br>
         </div>
         <div class = "lowboxdashed">
         趣味
         </div>
         <div class = "boxdashed">
-          Kaggle
-                  <br>DeepLearning<br>AtCoder<br>smile<br>Pytorch<br>楽しいね<br>
+          Kaggle<br>好きな色は<font color = "purple">紫</font>
+          <br>DeepLearning<br>AtCoder<br>RPS
+          <br>Pytorch<br>LTSM(Time series forecasting)<br>Watching @fps_shaka<br>
 
         </div>
         </p>
@@ -84,9 +95,10 @@
       <div class="hidden_box" onmousedown='return false;' onselectstart='return false;'>
       <input type="checkbox" id="label3" />
       <label for="label3">
-      作ったもの！<font color=red>update!12/05</font>
+      作ったもの <i class="fa fa-gavel"></i>
       </label>
         <div class="hidden_show">
+        <font color= #FEDFE1>update!12/05</font>
         <p>
         <br><div class = "boxdashed"><Font color = 'green'>日記</Font><br><a href="https://noknowledgegg.pythonanywhere.com/phan" target="_blank" title="diary"><img src= "{% static "img/diary.png" %}" style="
           width: 200px;
@@ -108,15 +120,17 @@
     <div class="hidden_box" onmousedown='return false;' onselectstart='return false;'>
     <input type="checkbox" id="label4" />
     <label for="label4">
-        このサイトを作った人のTwitter
+        このサイトを作った人のTwitter <i class="fa fa-twitter" ></i>
     </label>
       <div class="hidden_show">
         <div class = "page">
           <br>
-          <a class="twitter-timeline" data-width="420" data-height="500" data-theme="dark" href="https://twitter.com/YlePhan?ref_src=twsrc%5Etfw">Tweets by YlePhan</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <a class="twitter-timeline" data-width="620" data-height="500" data-theme="dark" href="https://twitter.com/YlePhan?ref_src=twsrc%5Etfw">Tweets by YlePhan</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
       </div>
     </div>
+
+    Create by Phan_yLe
   </div>
       <!-- Place this tag in your head or just before your close body tag. -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>

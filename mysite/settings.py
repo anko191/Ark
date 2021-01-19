@@ -28,7 +28,12 @@ except ImportError:
 # SECRET_KEY = '1i85i6+-8-8wwi$f@9(_m7tc0s9d7)%$&3i3ou=ljlf9sv2bpz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False # Local環境だったらTrueになるからok
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
 
 ALLOWED_HOSTS = ['127.0.0.1','.pythonanywhere.com']
 

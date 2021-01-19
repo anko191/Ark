@@ -1,0 +1,84 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>プログレスを作る</title>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython.min.js">
+        </script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython_stdlib.js">
+        </script>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="//fonts.googleapis.com/css?family=Noto+Serif+JP&subset=japanese" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="icon" href="{% static 'img/favicon.ico' %}" />
+
+    </head>
+
+    <body style = "  background: linear-gradient(0deg, rgba(49, 170, 226, 0.8) 50%, rgba(0, 0, 0, 0.1) 120%) fixed;
+      animation: gradationTest 5s infinite;
+      background-position: 100% 150;
+      transition: .5s;
+      font-family: 'Noto Serif JP', cursive;">
+
+<script type="text/python" id="script50">
+
+from PIL import ImageTk
+import tkinter as tk
+import tkinter.ttk as ttk
+from PIL import ImageGrab as ImageGrab
+
+def done(arr, name = "defalut", maxw = 500, maxh = 100):
+    root = tk.Tk()
+    #help(root)
+    sw = str(maxw)
+    sh = str(maxh)
+    root.geometry(sw+"x"+sh)
+    tit = tk.Label(root, text = name, relief = tk.RIDGE, bg = "snow")
+
+    name = name.replace('/','_')
+    tit.grid(row = 0, column = 1, ipadx = maxw//10)
+    for i, ar in enumerate(arr):
+        # canvas = tk.Canvas(root, height  = 1000, width = 2000, bg = "snow")
+        label = tk.Label(root, text = ar[0] + " ", bg = "white")
+        label.grid(row = i+1, column = 0, ipadx = maxw//100//2)
+        progressbar = ttk.Progressbar(root,
+                                      orient="horizontal",
+                                      length = maxw - maxw//2.6,
+                                      mode = "determinate")
+
+        # progressbar.pack()
+        progressbar.grid(row = i+1, column = 1, ipadx = 10)
+
+        # help(progressbar.pack())
+        maximum_bar = 24
+        value_bar = ar[1]
+        percentage = "%.1f"%((value_bar / maximum_bar) * 24)
+        # print(value_bar, ar)
+        progressbar.configure(maximum=maximum_bar, value=value_bar)
+        per = tk.Label(root, text = str(percentage) + "時間/日", bg = "white")
+        per.grid(row = i+1, column = 2, ipadx = 5)
+
+    def save_canvas():
+        x = root.winfo_rootx()
+        y = root.winfo_rooty()
+        xx = x + root.winfo_width()
+        yy = y + root.winfo_height()
+        ImageGrab.grab(bbox=(x,y,xx,yy)).save(name + ".png",quarity = 100)
+    root.after(1000, save_canvas)
+    root.configure(bg = "white")
+    #help(root)
+    root.mainloop()
+
+arr = [['FE',3.5], ['やあ',11], ["基本情報",4], ["nym",5]]
+maxl = 0
+for a in arr:
+    if len(a[0]) > 10:
+        a[0] = a[0][:10]
+    maxl = max(maxl, len(a[0]))
+print('aa');
+done(arr, name = "12/22", maxw = maxl * 100,maxh = len(arr) * 34)
+</script>
+
+    </body>
+</html>

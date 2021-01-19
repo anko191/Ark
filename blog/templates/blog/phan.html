@@ -8,6 +8,8 @@
         <link href="//fonts.googleapis.com/css?family=Noto+Serif+JP&subset=japanese" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
         <link rel="icon" href="{% static 'img/favicon.ico' %}" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
     </head>
 
     <body style = "  background: linear-gradient(0deg, rgba(49, 170, 226, 0.8) 50%, rgba(0, 0, 0, 0.1) 120%) fixed;
@@ -20,7 +22,7 @@
             <div class='wave -one'></div>
             <div class='wave -two'></div>
             <div class='wave -three'></div>
-            <div class='title'><a href = '/' style="text-decoration: none;">Diary . </a></div>
+            <div class='title'>Diary<a href = "/"><i class="fa fa-home"></i></a></div>
           </div>
           {% for post in posts %}
           <div style = "margin-left:20px"><br>
@@ -30,7 +32,7 @@
           </div>
           <br>
           <div id = "line" style="
-            background-color: #330066;
+            background-color: #4A225D;
             margin-top: 0;
             padding: 5px 5px 5px 5px;
             box-shadow: -2px -2px 6px rgba(255, 255, 255, .6),

@@ -6,7 +6,8 @@
   padding-left: 30px;
 } */
 body {
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 20%, rgba(49, 170, 226, 20) 120%) fixed;
+  background: linear-gradient(180deg, #77428D 50%, #ffffff 150%) fixed;
+  /*background:#77428D;*/
   animation: gradationTest 5s infinite;
   background-position: 100% 150;
   transition: .5s;
@@ -48,9 +49,12 @@ button:active {
               inset 2px 2px 4px rgba(0, 0, 0, .15);
 }
 a {
-  font-size:20px;
   color: teal;
   text-decoration: none;
+}
+
+.progress-bar {
+  padding:15px 70px 15px 70px;
 }
 .hidden_box {
     margin: 1em 0;
@@ -69,13 +73,14 @@ a {
     border-radius: 0px;
     /* padding: 20px 20px 20px 40px; */
     padding:15px 70px 15px 70px;
-    width:500px;
+    width: 800px;
     text-align: center;
     transition: .2s ease-in-out;
     background: linear-gradient(30deg, #ffffff, #ffffff);
     /* background: #42baff; */
     box-shadow:  -6px 6px 0px #39a0db,
                  6px -6px 0px #4bd4ff;
+    font-size: 2em;
 }
 
 /*アイコンを表示*/
@@ -98,6 +103,12 @@ a {
 
 }
 
+h1:hover .fa{
+  color: #a786df;
+}
+.hidden_box label:hover .fa{
+  color: #a786df;
+}
 /*アイコンを切り替え*/
 .hidden_box input:checked ~ label:before {
      content: '★';
@@ -125,6 +136,7 @@ a {
 .hidden_box input:checked ~ .hidden_show {
     padding: 10px 0;
     height: auto;
+    font-size: 1.5em;
     opacity: 1;
 }
 
@@ -200,6 +212,7 @@ a {
   font-size: 24px;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
   text-indent: .3em;
+  font-size:3em;
 }
 
 @-webkit-keyframes drift {
@@ -255,8 +268,8 @@ a {
 }
 .page-header{
   padding: auto auto;
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0) 20%, rgba(49, 170, 226, 20) 90%) fixed;
-  animation: gradationTest 5s infinite;
+  background: linear-gradient(45deg, #8F77B5 50%, #4A225D 100%) fixed;
+  animation: gradationTest 15s infinite;
   background-position: 0% 150;
   color: #fff;
   background-size: 200% auto;
@@ -352,7 +365,7 @@ h1, h2, h3, h4 {
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(45deg, rgba(0, 0, 0, 1) 60%, rgba(49, 170, 226, 1) 120%) fixed;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 1) 60%, #4A225D 120%) fixed;
   display:flex;
   justify-content: center;
   align-items: center;
@@ -366,6 +379,7 @@ h1, h2, h3, h4 {
   position: relative;
   border: 2px #fff;
   animation: loader 10s infinite ease;
+  font-size: 32px;
 }
 .loader-inner {
   vertical-align: top;
