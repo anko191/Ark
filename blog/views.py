@@ -16,3 +16,5 @@ def phan(request):
 def progress(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     return render(request, 'blog/progress.html',{'posts':posts})
+def contact(request):
+    return render(request, 'blog/contact.html')

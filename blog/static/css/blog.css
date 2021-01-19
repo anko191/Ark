@@ -253,7 +253,10 @@ h1:hover .fa{
 .lowboxdashed {
     background: #f0f7ff;
     border: dashed 5px #5b8bd0;/*点線*/
-    padding:4px;
+    text-align: center;
+
+    font-size: 1.5em;
+    opacity: 1;
 }
 .page-header {
     /* background-color: #C25100; */
