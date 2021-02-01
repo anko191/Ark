@@ -14,7 +14,7 @@ body {
   background-image: url("../img/home_background_2.jpg");
   background-repeat: repeat;
   /* background-size: contain; */
-  background-size: 1000px 1500px;
+  background-size: 800px 1200px;
 }
 button {
   padding: 1.5em 5em;
@@ -149,7 +149,7 @@ h1:hover .fa{
   height: 150px;
   border-radius: 5px;
   box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
-  background: #fbfcee;
+  background: rgba(251, 252, 238, 0.2);
   position: relative;
   overflow: hidden;
   -webkit-transform: translate3d(0, 0, 0);
@@ -211,12 +211,11 @@ h1:hover .fa{
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
   color: white;
-  font-family: 'Playfair Display', serif;
-  letter-spacing: .4em;
-  font-size: 24px;
+  font-family: "Times New Roman", serif;
+  letter-spacing: .2em;
+  font-size: 70px;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
   text-indent: .3em;
-  font-size:3em;
 }
 
 @-webkit-keyframes drift {
@@ -275,11 +274,12 @@ h1:hover .fa{
 }
 .page-header{
   padding: auto auto;
-  background: linear-gradient(45deg, #8F77B5 50%, #4A225D 100%) fixed;
-  animation: gradationTest 15s infinite;
+  background: linear-gradient(45deg, rgba(207,195,224, 0.2) 0%, rgba(74,34,93, 0.8) 100%) fixed;
+  animation: gradationTest 5s infinite;
   background-position: 0% 150;
   color: #fff;
   background-size: 200% auto;
+
   transition: .3s;
   box-shadow: -2px -2px 6px rgba(255, 255, 255, .6),
               -2px -2px 4px rgba(255, 255, 255, .4),
