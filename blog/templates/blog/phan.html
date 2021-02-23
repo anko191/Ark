@@ -36,7 +36,12 @@
             <div class = "boxdashed" style="border: dashed 2px #39a0db;margin-left:30px;margin-right:30px;">
               < 投稿日時： {{ post.published_date }} >
               <h1 style="font-family: 'Noto Serif JP', cursive; font-weight:bold"><u>{{ post.title }}</u></h2><br>
-              <div id = "content"><p style = "margin-left:30px;font-size:21px;" >{{ post.text|markdown|safe }}</p></div></div>
+              <div id = "content" class="markdown-body editormd-html-preview">
+                <p style = "font-family: 'Noto Serif JP', cursive; margin-left:30px;font-size:30px;" >
+                  {{ post.text|markdown|safe }}
+                </p>
+              </div>
+            </div>
           </div>
           <br>
           <div id = "line" style="
