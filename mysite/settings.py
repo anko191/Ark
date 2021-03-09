@@ -144,7 +144,7 @@ if sw:
     MEDIA_ROOT = './uploads'
 else:
     STATIC_ROOT = '/home/NoKnowledgeGG/noknowledgegg.pythonanywhere.com/static/'
-    MEDIA_ROOT = 'https://www.pythonanywhere.com/user/NoKnowledgeGG/files/home/NoKnowledgeGG/noknowledgegg.pythonanywhere.com/uploads'
+    MEDIA_ROOT = '/home/NoKnowledgeGG/noknowledgegg.pythonanywhere.com/uploads/'
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 #
 # MEDIA_URL = '/media/'
